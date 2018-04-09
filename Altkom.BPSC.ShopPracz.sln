@@ -5,6 +5,14 @@ VisualStudioVersion = 15.0.27428.2015
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.BPSC.ShopPracz.Models", "Altkom.BPSC.ShopPracz.Models\Altkom.BPSC.ShopPracz.Models.csproj", "{CE9AC9AC-5C47-4147-8BDC-AF26E68ECF04}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.BPSC.ShopPracz.UnitTests", "Altkom.BPSC.ShopPracz.UnitTests\Altkom.BPSC.ShopPracz.UnitTests.csproj", "{488E3707-3BEB-4083-A16A-F48A00E01EC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.BPSC.ShopPracz.IServices", "Altkom.BPSC.ShopPracz.IServices\Altkom.BPSC.ShopPracz.IServices.csproj", "{B80E7571-5B7D-4E09-8B25-8835E08FFA63}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.BPSC.ShopPracz.MockServices", "Altkom.BPSC.ShopPracz.MockServices\Altkom.BPSC.ShopPracz.MockServices.csproj", "{EEE4D9E1-86DF-4340-87CD-DDBAC93DB998}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.BPSC.ShopPracz.DbServices", "Altkom.BPSC.ShopPracz.DbServices\Altkom.BPSC.ShopPracz.DbServices.csproj", "{B1AB290D-C808-45CC-ABE4-681BDAB7E3B2}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +23,22 @@ Global
 		{CE9AC9AC-5C47-4147-8BDC-AF26E68ECF04}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CE9AC9AC-5C47-4147-8BDC-AF26E68ECF04}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CE9AC9AC-5C47-4147-8BDC-AF26E68ECF04}.Release|Any CPU.Build.0 = Release|Any CPU
+		{488E3707-3BEB-4083-A16A-F48A00E01EC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{488E3707-3BEB-4083-A16A-F48A00E01EC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{488E3707-3BEB-4083-A16A-F48A00E01EC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{488E3707-3BEB-4083-A16A-F48A00E01EC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B80E7571-5B7D-4E09-8B25-8835E08FFA63}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B80E7571-5B7D-4E09-8B25-8835E08FFA63}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B80E7571-5B7D-4E09-8B25-8835E08FFA63}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B80E7571-5B7D-4E09-8B25-8835E08FFA63}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EEE4D9E1-86DF-4340-87CD-DDBAC93DB998}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EEE4D9E1-86DF-4340-87CD-DDBAC93DB998}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EEE4D9E1-86DF-4340-87CD-DDBAC93DB998}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EEE4D9E1-86DF-4340-87CD-DDBAC93DB998}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1AB290D-C808-45CC-ABE4-681BDAB7E3B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1AB290D-C808-45CC-ABE4-681BDAB7E3B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1AB290D-C808-45CC-ABE4-681BDAB7E3B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1AB290D-C808-45CC-ABE4-681BDAB7E3B2}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
