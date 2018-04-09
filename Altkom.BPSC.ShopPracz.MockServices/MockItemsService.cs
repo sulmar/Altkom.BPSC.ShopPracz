@@ -11,29 +11,29 @@ namespace Altkom.BPSC.ShopPracz.MockServices
     {
         protected ICollection<TItem> items = new List<TItem>();
 
-        public void Add(TItem item)
+        public virtual void Add(TItem item)
         {
             items.Add(item);
         }
 
-        public TItem Get(int id)
+        public virtual TItem Get(int id)
         {
             return items.FirstOrDefault(item => item.Id == id);
         }
 
-        public ICollection<TItem> Get()
+        public virtual ICollection<TItem> Get()
         {
             return items;
         }
 
-        public void Remove(int id)
+        public virtual void Remove(int id)
         {
             TItem item = Get(id);
 
             items.Remove(item);
         }
 
-        public void Update(TItem item)
+        public virtual void Update(TItem item)
         {
             throw new NotImplementedException();
         }

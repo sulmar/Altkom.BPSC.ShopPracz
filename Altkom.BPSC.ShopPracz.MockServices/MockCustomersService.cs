@@ -11,5 +11,13 @@ namespace Altkom.BPSC.ShopPracz.MockServices
         {
             return items.Where(customer => customer.FullName == fullname).ToList();
         }
+
+        public override void Remove(int id)
+        {
+            Customer customer = Get(id);
+
+            customer.IsDeleted = true;
+        }
+
     }
 }

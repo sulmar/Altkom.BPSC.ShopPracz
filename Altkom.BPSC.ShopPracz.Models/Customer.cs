@@ -11,6 +11,8 @@
                 return $"{FirstName} {LastName}";
             }
         }
+
+        public bool IsDeleted { get; set; }
     }
 
 

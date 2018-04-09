@@ -15,6 +15,38 @@ namespace Altkom.BPSC.ShopPracz.Models
         public Customer Customer { get; set; }
         public ICollection<OrderDetail> Details { get; set; }
 
+        //public decimal TotalAmount
+        //{
+        //    get
+        //    {
+        //        decimal totalAmount = 0;
+
+        //        foreach (var detail in this.Details)
+        //        {
+        //            totalAmount += detail.Amount;
+        //        }
+
+        //        return totalAmount;
+        //    }
+        //}
+
+        public decimal TotalAmount
+        {
+            get
+            {
+                return this.Details
+                    .Where(bla => bla.Quantity > 0)
+                    .Select(d => d.Amount)
+                    .Sum();
+
+                //return (from d in this.Details
+                //        where d.Quantity > 0
+                //        select d.Amount)
+                //        .Sum();
+
+            }
+        }
+
         public Order(string orderNumber, Customer customer, DateTime orderDate)
         {
             if (string.IsNullOrEmpty(orderNumber))
