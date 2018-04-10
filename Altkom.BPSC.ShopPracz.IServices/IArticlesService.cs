@@ -10,5 +10,9 @@ namespace Altkom.BPSC.ShopPracz.IServices
     public interface IArticlesService : IItemsService<Article>
     {
         ICollection<Article> Get(string name);
+
+        ICollection<Article> Get(string fieldname, object value);
+
+        ICollection<(string color, int qty)> GetColorQuantities();
     }
 }

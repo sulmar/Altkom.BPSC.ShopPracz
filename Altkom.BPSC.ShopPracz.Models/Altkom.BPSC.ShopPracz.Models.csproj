@@ -41,6 +41,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Base.cs" />
+    <Compile Include="ColorQuantity.cs" />
     <Compile Include="Customer.cs" />
     <Compile Include="Article.cs" />
     <Compile Include="Order.cs" />
