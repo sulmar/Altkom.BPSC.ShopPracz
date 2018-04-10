@@ -51,6 +51,8 @@
     <Compile Include="OrderUnitTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OrdersServiceUnitTests.cs" />
+    <Compile Include="ArticlesServiceUnitTests.cs" />
+    <Compile Include="UnitTest1.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

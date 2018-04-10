@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MockArticlesService.cs" />
     <Compile Include="MockCustomersService.cs" />
     <Compile Include="MockItemsService.cs" />
     <Compile Include="MockOrdersService.cs" />
