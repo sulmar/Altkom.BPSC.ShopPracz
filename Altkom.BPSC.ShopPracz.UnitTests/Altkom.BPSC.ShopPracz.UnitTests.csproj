@@ -83,6 +83,7 @@
     <Compile Include="DateTimeExtensionsUnitTests.cs" />
     <Compile Include="CalculatorUnitTests.cs" />
     <Compile Include="FactoryUnitTests.cs" />
+    <Compile Include="MachineStateUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
