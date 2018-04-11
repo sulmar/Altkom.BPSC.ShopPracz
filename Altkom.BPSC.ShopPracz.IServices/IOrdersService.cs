@@ -1,4 +1,5 @@
 ﻿using Altkom.BPSC.ShopPracz.Models;
+using Altkom.BPSC.ShopPracz.Models.SearchCriteria;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,6 +16,8 @@ namespace Altkom.BPSC.ShopPracz.IServices
 
         Order Get(int id);
         ICollection<Order> Get();
+
+        ICollection<Order> Get(OrderSearchCriteria criteria);
     }
 
 }

@@ -4,6 +4,8 @@ namespace Altkom.BPSC.ShopPracz.IServices
 {
     public interface IProductsService : IItemsService<Product>
     {
+
+
     }
 
 }

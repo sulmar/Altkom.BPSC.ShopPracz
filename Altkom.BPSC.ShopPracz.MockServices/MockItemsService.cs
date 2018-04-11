@@ -13,6 +13,15 @@ namespace Altkom.BPSC.ShopPracz.MockServices
 
         public virtual void Add(TItem item)
         {
+            int maxId = 0;
+
+            if (items.Any())
+            {
+                maxId = items.Max(p => p.Id);
+            }
+
+            item.Id = ++maxId;
+
             items.Add(item);
         }
 

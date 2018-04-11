@@ -22,7 +22,7 @@ namespace Altkom.BPSC.ShopPracz.UnitTests
     }
 
     [TestClass]
-    public class UnitTest1
+    public class DateTimeExtensionsUnitTests
     {
         [TestMethod]
         public void TestMethod1()

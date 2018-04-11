@@ -55,7 +55,8 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="OrdersServiceUnitTests.cs" />
     <Compile Include="ArticlesServiceUnitTests.cs" />
-    <Compile Include="UnitTest1.cs" />
+    <Compile Include="DateTimeExtensionsUnitTests.cs" />
+    <Compile Include="CalculatorUnitTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -76,6 +77,10 @@
     <ProjectReference Include="..\Altkom.BPSC.ShopPracz.Models\Altkom.BPSC.ShopPracz.Models.csproj">
       <Project>{CE9AC9AC-5C47-4147-8BDC-AF26E68ECF04}</Project>
       <Name>Altkom.BPSC.ShopPracz.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Altkom.BPSC.ShopPracz.OrderCalculators\Altkom.BPSC.ShopPracz.OrderCalculators.csproj">
+      <Project>{86B37BC7-20A9-4A3A-89A5-35142DC23810}</Project>
+      <Name>Altkom.BPSC.ShopPracz.OrderCalculators</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

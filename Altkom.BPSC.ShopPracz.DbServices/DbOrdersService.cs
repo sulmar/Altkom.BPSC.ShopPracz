@@ -1,5 +1,6 @@
 ﻿using Altkom.BPSC.ShopPracz.IServices;
 using Altkom.BPSC.ShopPracz.Models;
+using Altkom.BPSC.ShopPracz.Models.SearchCriteria;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -21,6 +22,11 @@ namespace Altkom.BPSC.ShopPracz.DbServices
         }
 
         public ICollection<Order> Get()
+        {
+            throw new NotImplementedException();
+        }
+
+        public ICollection<Order> Get(OrderSearchCriteria criteria)
         {
             throw new NotImplementedException();
         }

@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.BPSC.ShopPracz.MockS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.BPSC.ShopPracz.DbServices", "Altkom.BPSC.ShopPracz.DbServices\Altkom.BPSC.ShopPracz.DbServices.csproj", "{B1AB290D-C808-45CC-ABE4-681BDAB7E3B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Altkom.BPSC.ShopPracz.OrderCalculators", "Altkom.BPSC.ShopPracz.OrderCalculators\Altkom.BPSC.ShopPracz.OrderCalculators.csproj", "{86B37BC7-20A9-4A3A-89A5-35142DC23810}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{B1AB290D-C808-45CC-ABE4-681BDAB7E3B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1AB290D-C808-45CC-ABE4-681BDAB7E3B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1AB290D-C808-45CC-ABE4-681BDAB7E3B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{86B37BC7-20A9-4A3A-89A5-35142DC23810}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{86B37BC7-20A9-4A3A-89A5-35142DC23810}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{86B37BC7-20A9-4A3A-89A5-35142DC23810}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{86B37BC7-20A9-4A3A-89A5-35142DC23810}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -15,6 +15,14 @@ namespace Altkom.BPSC.ShopPracz.Models
         public Customer Customer { get; set; }
         public ICollection<OrderDetail> Details { get; set; }
 
+        public bool IsSelectedCustomer
+        {
+            get
+            {
+                return Customer != null;
+            }
+        }
+
         //public decimal TotalAmount
         //{
         //    get
@@ -44,6 +52,17 @@ namespace Altkom.BPSC.ShopPracz.Models
                 //        select d.Amount)
                 //        .Sum();
 
+            }
+        }
+
+
+        public decimal? DiscountAmount { get; set; }
+
+        public bool HasDiscount
+        {
+            get
+            {
+                return DiscountAmount.HasValue && DiscountAmount.Value > 0;
             }
         }
 
