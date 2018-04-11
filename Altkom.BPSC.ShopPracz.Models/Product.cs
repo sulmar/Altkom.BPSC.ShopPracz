@@ -10,6 +10,12 @@
             this.Color = color;
         }
 
+        public Product()
+            : this("Brak nazwy", 0, "Transparent")
+        {
+
+        }
+
         
 
     }

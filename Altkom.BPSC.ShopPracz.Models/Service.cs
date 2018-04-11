@@ -6,6 +6,12 @@
             : base(name, unitPrice)
         {
         }
+
+        public Service()
+            : this("Brak nazwy", 0)
+        {
+
+        }
     }
 
 
