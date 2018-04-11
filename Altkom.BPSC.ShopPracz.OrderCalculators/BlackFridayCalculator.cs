@@ -49,13 +49,7 @@ namespace Altkom.BPSC.ShopPracz.OrderCalculators
     }
 
 
-    public interface IStrategy
-    {
-        bool CanDiscount(Order order);
-
-        decimal GetDiscount(Order order);
-
-    }
+   
 
     public class HappyDayOfWeekStrategy : IStrategy
     {
@@ -155,5 +149,117 @@ namespace Altkom.BPSC.ShopPracz.OrderCalculators
         }
     }
 
+    public interface IStrategy
+    {
+        bool CanDiscount(Order order);
+        decimal GetDiscount(Order order);
+    }
 
+    public interface IRuleStrategy
+    {
+        bool CanDiscount(Order order);
+    }
+
+    public interface IDiscountStrategy
+    {
+        decimal GetDiscount(Order order);
+    }
+
+    public class HappyHoursRuleStrategy : IRuleStrategy
+    {
+        private readonly TimeSpan from;
+        private readonly TimeSpan to;
+
+        public HappyHoursRuleStrategy(TimeSpan from, TimeSpan to)
+        {
+            this.from = from;
+            this.to = to;
+        }
+
+        public bool CanDiscount(Order order)
+        {
+            return order.OrderDate.TimeOfDay >= from
+                && order.OrderDate.TimeOfDay <= to;
+        }
+    }
+
+    public interface IRuleStrategy<T>
+    {
+        bool CanDiscount(T item);
+    }
+
+    public class DelegateRuleStrategy<T> : IRuleStrategy<T>
+    {
+        private readonly Predicate<T> predicate;
+
+        public DelegateRuleStrategy(Predicate<T> predicate)
+        {
+            this.predicate = predicate;
+        }
+
+        public bool CanDiscount(T item) => predicate(item);
+    }
+
+    public class HappyDayRuleStrategy : IRuleStrategy
+    {
+        private readonly DayOfWeek dayOfWeek;
+
+        public HappyDayRuleStrategy(DayOfWeek dayOfWeek) 
+            => this.dayOfWeek = dayOfWeek;
+
+        public bool CanDiscount(Order order)
+            => order.OrderDate.DayOfWeek == dayOfWeek;
+    }
+
+    public class PercentageDiscountStrategy : IDiscountStrategy
+    {
+        private readonly decimal percentage;
+
+        public PercentageDiscountStrategy(decimal percentage)
+        {
+            this.percentage = percentage;
+        }
+
+        public decimal GetDiscount(Order order)
+        {
+            return order.TotalAmount * percentage;
+        }
+    }
+
+    public class FixedAmountDiscountStrategy : IDiscountStrategy
+    {
+        private readonly decimal fixedAmount;
+
+        public FixedAmountDiscountStrategy(decimal fixedAmount)
+            => this.fixedAmount = fixedAmount;
+
+        public decimal GetDiscount(Order order) => fixedAmount;
+    }
+
+    public class OrderDiscountCalculator
+    {
+        private readonly IRuleStrategy ruleStrategy;
+        private readonly IDiscountStrategy discountStrategy;
+
+        public OrderDiscountCalculator(
+            IRuleStrategy ruleStrategy,
+            IDiscountStrategy discountStrategy
+            )
+        {
+            this.ruleStrategy = ruleStrategy;
+            this.discountStrategy = discountStrategy;
+        }
+
+        public void Calculate(Order order)
+        {
+            if (ruleStrategy.CanDiscount(order))
+            {
+                order.DiscountAmount = discountStrategy.GetDiscount(order);
+            }
+            else
+            {
+                order.DiscountAmount = 0;
+            }
+        }
+    }
 }

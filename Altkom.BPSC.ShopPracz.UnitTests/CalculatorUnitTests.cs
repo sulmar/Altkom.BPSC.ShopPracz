@@ -95,5 +95,36 @@ namespace Altkom.BPSC.ShopPracz.UnitTests
             Assert.AreEqual(6, order.DiscountAmount);
             Assert.IsTrue(order.HasDiscount);
         }
+
+        [TestMethod]
+        public void OrderDiscountCalculatorTest()
+        {
+            // Arrange
+            AddArticlesTest();
+
+            Customer customer = new Customer();
+
+            Article product1 = articlesService.Get(1);
+
+            Order order = new Order("ZAM 1/2018", customer);
+            order.OrderDate = DateTime.Parse("2018-04-13");
+            order.AddArticle(product1, 2);
+
+            IRuleStrategy ruleStrategy = new HappyDayRuleStrategy(DayOfWeek.Friday);
+
+            //IRuleStrategy<Order> ruleStrategy 
+            //    = new DelegateRuleStrategy<Order>(o => o.OrderDate.DayOfWeek == DayOfWeek.Friday);
+
+            IDiscountStrategy discountStrategy = new PercentageDiscountStrategy(0.3m);
+
+            OrderDiscountCalculator calculator = new OrderDiscountCalculator(ruleStrategy, discountStrategy);
+
+            // Acts
+            calculator.Calculate(order);
+
+            // Assets
+            Assert.AreEqual(6, order.DiscountAmount);
+            Assert.IsTrue(order.HasDiscount);
+        }
     }
 }
