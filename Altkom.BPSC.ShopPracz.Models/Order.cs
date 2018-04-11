@@ -13,7 +13,25 @@ namespace Altkom.BPSC.ShopPracz.Models
         public DateTime? DeliveryDate { get; set; }
         public OrderStatus Status { get; set; }
         public Customer Customer { get; set; }
-        public ICollection<OrderDetail> Details { get; set; }
+        protected ICollection<OrderDetail> Details { get; set; }
+
+
+        public void Add(OrderDetail orderDetail)
+        {
+            orderDetail.UnitPrice = orderDetail.Item.UnitPrice;
+            this.Details.Add(orderDetail);
+        }
+
+        public void AddArticle(Article item, decimal qty = 1)
+        {
+            OrderDetail orderDetail = new OrderDetail
+            {
+                Item = item,
+                Quantity = qty,
+            };
+
+            Add(orderDetail);
+        }
 
         public bool IsSelectedCustomer
         {
@@ -63,6 +81,17 @@ namespace Altkom.BPSC.ShopPracz.Models
             get
             {
                 return DiscountAmount.HasValue && DiscountAmount.Value > 0;
+            }
+        }
+
+        public decimal TotalAmountAfterDiscount
+        {
+            get
+            {
+                if (DiscountAmount.HasValue)
+                    return TotalAmount - DiscountAmount.Value;
+                else
+                    return TotalAmount;
             }
         }
 

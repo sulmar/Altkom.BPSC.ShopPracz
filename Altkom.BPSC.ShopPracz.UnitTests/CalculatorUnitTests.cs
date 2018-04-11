@@ -58,17 +58,35 @@ namespace Altkom.BPSC.ShopPracz.UnitTests
             Order order = new Order("ZAM 1/2018", customer);
             order.OrderDate = DateTime.Parse("2018-04-13");
 
-            OrderDetail orderDetail = new OrderDetail
-            {
-                Item = product1,
-                Quantity = 2,
-                UnitPrice = product1.UnitPrice
-            };
-
-            order.Details.Add(orderDetail);
-
+            order.AddArticle(product1, 2);
 
             var calculator = new BlackFridayCalculator();
+
+            // Acts
+            calculator.Calculate(order);
+
+            // Assets
+            Assert.AreEqual(6, order.DiscountAmount);
+            Assert.IsTrue(order.HasDiscount);
+        }
+
+        [TestMethod]
+        public void OrderCalculatorTest()
+        {
+            // Arrange
+            AddArticlesTest();
+
+            Customer customer = new Customer();
+
+            Article product1 = articlesService.Get(1);
+
+            Order order = new Order("ZAM 1/2018", customer);
+            order.OrderDate = DateTime.Parse("2018-04-13");
+            order.AddArticle(product1, 2);
+
+            IStrategy strategy = new HappyDayOfWeekStrategy(DayOfWeek.Friday, 0.3m);
+
+            OrderCalculator calculator = new OrderCalculator(strategy);
 
             // Acts
             calculator.Calculate(order);
